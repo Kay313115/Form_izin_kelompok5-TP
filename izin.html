@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Izin - Kelompok 5</title>
+<link rel="stylesheet" href="izin.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="phone-container">
+  <div class="header-green">
+    <div class="mosque-icon-large">🕌</div>
+    <h1>Form Izin Pengajian<br>Kelompok 5</h1>
+    <p>Silakan isi jika berhalangan hadir</p>
+  </div>
+  <div class="form-card">
+    <div class="form-row">
+      <label>Nama Lengkap <span class="req">*</span></label>
+      <div class="input-wrap">
+        <span class="input-icon">👤</span>
+        <input id="nama" type="text" placeholder="search" maxlength="50" autocomplete="off">
+        <button id="clearNama" class="clear-btn hidden" onclick="clearNama()">✕</button>
+        <div id="hasilNama" class="search-dropdown hidden"></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Kategori <span class="req">*</span></label>
+      <div class="custom-select" id="custom-select">
+        <div class="select-trigger" id="select-trigger" onclick="toggleSelect()">
+          <span class="ph" id="ph">Pilih kategori</span><span class="arrow">▼</span>
+        </div>
+        <div class="select-options hidden" id="select-options">
+          <label><input type="radio" name="kategori" value="Bapak-Bapak"> Bapak-Bapak</label>
+          <label><input type="radio" name="kategori" value="Ibu-Ibu"> Ibu-Ibu</label>
+          <label><input type="radio" name="kategori" value="Remaja Putra"> Remaja Putra</label>
+          <label><input type="radio" name="kategori" value="Remaji Putri"> Remaji Putri</label>
+        </div>
+      </div>
+      <input type="hidden" id="kategori">
+    </div>
+    <div class="form-row">
+      <label>Alasan Izin <span class="req">*</span></label>
+      <div class="input-wrap">
+        <span class="input-icon">📝</span>
+        <input id="alasan" type="text" placeholder="Contoh: Sakit, kerja, ada keperluan" maxlength="100">
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Tanggal Izin</label>
+      <div class="input-wrap">
+        <span class="input-icon">📅</span>
+        <input id="tanggal" type="date">
+      </div>
+    </div>
+    <!-- HONEYPOT anti bot -->
+    <input type="text" id="website" style="display:none" tabindex="-1" autocomplete="off">
+    
+    <button id="btn-kirim" class="btn-kirim" onclick="kirimIzin()">
+      <span id="btn-text">SUBMIT IZIN</span><span id="btn-loader" class="hidden">⏳ Mengirim...</span>
+    </button>
+    <div id="status" class="status hidden"></div>
+   
+  </div>
+</div>
+<script src="izin.js"></script>
+</body>
+</html>
